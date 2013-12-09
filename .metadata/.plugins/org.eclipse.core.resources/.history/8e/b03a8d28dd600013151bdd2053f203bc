@@ -1,0 +1,65 @@
+package fuchimi;
+
+import java.util.Scanner;
+
+public class FuchimiGameRulesTest {
+	public static void main(String[] args) {
+
+		Hand hand1 = new Rock();
+		Hand hand2 = new Paper();
+		Hand hand3 = new Scissors();
+
+		System.out.println(hand1 + "beats" + hand1 + "?" + hand1.beats(hand1));
+		System.out.println(hand1 + "beats" + hand2 + "?" + hand1.beats(hand2));
+		System.out.println(hand1 + "beats" + hand3 + "?" + hand1.beats(hand3));
+		System.out.println(hand2 + "beats" + hand1 + "?" + hand2.beats(hand1));
+		System.out.println(hand2 + "beats" + hand2 + "?" + hand2.beats(hand2));
+		System.out.println(hand2 + "beats" + hand3 + "?" + hand2.beats(hand3));
+		System.out.println(hand3 + "beats" + hand1 + "?" + hand3.beats(hand1));
+		System.out.println(hand3 + "beats" + hand2 + "?" + hand3.beats(hand2));
+		System.out.println(hand3 + "beats" + hand3 + "?" + hand3.beats(hand3));
+		gameupdater();
+	}
+
+	public static Hand game(int parameter) {
+		switch (parameter) {
+		case 1:
+			return new Rock();
+		case 2:
+			return new Paper();
+		case 3:
+			return new Scissors();
+
+		}
+		return null;
+	}
+
+	public static void gameupdater() {
+		Scanner sc = new Scanner(System.in);
+		while (true) {
+			System.out
+					.println("Enter 1 for Rock\nEnter 2 for Paper\nEnter 3 for Scissor\nEnter 0 to Quit");
+			String currentline = sc.nextLine();
+			if (Integer.parseInt(currentline) == 0) {
+				break;
+			}
+			Hand playerhand = game(Integer.parseInt(currentline));
+			Hand computerhand = game(((int) (Math.random() * 10)) % 3 + 1);
+			System.out.println("You chose " + playerhand + "\nComputer chose "
+					+ computerhand);
+			if (playerhand.beats(computerhand)) {
+				System.out.println("You WON");
+				System.out.println("Your hand " + playerhand + " beats "
+						+ computerhand);
+			} else if (!playerhand.beats(computerhand)) {
+				System.out.println("You LOST");
+				System.out.println("Your hand " + playerhand + " is beaten by "
+						+ computerhand);
+			} else {
+				System.out.println("DRAW GAME !");
+				System.out.println("Your hand " + playerhand + " equals "
+						+ computerhand);
+			}
+		}
+	}
+}

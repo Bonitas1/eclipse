@@ -1,0 +1,15 @@
+import fuchimi.Hand;
+import fuchimi.Paper;
+import fuchimi.Rock;
+import fuchimi.Scissors;
+
+public class FuchimiGameRulesTest {
+
+	Hand hand1 = new Rock();
+	Hand hand2 = new Paper();
+	Hand hand3 = new Scissors();
+	
+	
+	
+
+}

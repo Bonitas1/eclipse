@@ -1,0 +1,6 @@
+package fuchimi;
+
+public abstract class Hand {
+	
+
+}

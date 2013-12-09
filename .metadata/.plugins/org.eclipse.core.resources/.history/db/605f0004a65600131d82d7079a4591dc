@@ -1,0 +1,11 @@
+
+public class FuchimiGameRulesTest {
+
+	Hand hand1 = new Rock();
+	Hand hand2 = new Paper();
+	Hand hand3 = new Scissors();
+	
+	
+	
+
+}
