@@ -10,5 +10,5 @@ public abstract class Hand {
 
 	protected abstract Boolean looseAgainst (Scissors scissors);
 
-
+ 
 }

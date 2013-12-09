@@ -20,7 +20,7 @@ public class FuchimiGameRulesTest {
 		System.out.println(hand3 + "beats" + hand3 + "?" + hand3.beats(hand3));
 		gameupdater();
 	}
-
+ 
 	public static Hand game(int parameter) {
 		switch (parameter) {
 		case 1:

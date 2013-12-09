@@ -9,7 +9,7 @@ public class Rock  extends Hand{
 	public Boolean beats(Hand hand) {
 		return hand.looseAgainst(this);
 	}
-
+ 
 	@Override
 	protected Boolean looseAgainst(Rock rock) {
 		

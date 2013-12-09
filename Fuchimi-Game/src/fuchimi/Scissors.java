@@ -4,7 +4,7 @@ public class Scissors extends Hand {
 	public String toString() {
 		return "Scissors";
 	}
-
+ 
 	@Override
 	public Boolean beats(Hand hand) {
 		return hand.looseAgainst(this);
