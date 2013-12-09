@@ -40,25 +40,31 @@ public class FuchimiGameRulesTest {
 			System.out
 					.println("Enter 1 for Rock\nEnter 2 for Paper\nEnter 3 for Scissor\nEnter 0 to Quit");
 			String currentline = sc.nextLine();
-			if (Integer.parseInt(currentline) == 0) {
-				break;
-			}
-			Hand playerhand = game(Integer.parseInt(currentline));
-			Hand computerhand = game(((int) (Math.random() * 10)) % 3 + 1);
-			System.out.println("You chose " + playerhand + "\nComputer chose "
-					+ computerhand);
-			if (playerhand.beats(computerhand) == Boolean.TRUE) {
-				System.out.println("You WON");
-				System.out.println("Your hand " + playerhand + " beats "
-						+ computerhand);
-			} else if (playerhand.beats(computerhand) == Boolean.FALSE) {
-				System.out.println("You LOST");
-				System.out.println("Your hand " + playerhand + " is beaten by "
-						+ computerhand);
-			} else {
-				System.out.println("DRAW GAME !");
-				System.out.println("Your hand " + playerhand + " equals "
-						+ computerhand);
+			try {
+				if (Integer.parseInt(currentline) == 0) {
+
+					break;
+				}
+				Hand playerhand = game(Integer.parseInt(currentline));
+				Hand computerhand = game(((int) (Math.random() * 10)) % 3 + 1);
+
+				System.out.println("You chose " + playerhand
+						+ "\nComputer chose " + computerhand);
+				if (playerhand.beats(computerhand) == Boolean.TRUE) {
+					System.out.println("You WON");
+					System.out.println("Your hand " + playerhand + " beats "
+							+ computerhand);
+				} else if (playerhand.beats(computerhand) == Boolean.FALSE) {
+					System.out.println("You LOST");
+					System.out.println("Your hand " + playerhand
+							+ " is beaten by " + computerhand);
+				} else {
+					System.out.println("DRAW GAME !");
+					System.out.println("Your hand " + playerhand + " equals "
+							+ computerhand);
+				}
+			} catch (Exception e) {
+				System.out.println("Ungültige Eingabe !");
 			}
 		}
 	}
